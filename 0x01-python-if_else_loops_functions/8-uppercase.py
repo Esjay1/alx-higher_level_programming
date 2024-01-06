@@ -5,5 +5,5 @@ def uppercase(stri):
             newstring = (chr((ord(i) - 32)))
         else:
             newstring = i
-        print(f'{newstring}', end="")
+        print(newstring, end="")
     print()
