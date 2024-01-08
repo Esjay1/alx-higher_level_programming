@@ -12,4 +12,3 @@ def delete_at(my_list=[], idx=0):
             newlist.append(char)
     del my_list[idx]
     return newlist
-
