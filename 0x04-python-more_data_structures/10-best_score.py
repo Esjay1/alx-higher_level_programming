@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 def best_score(a_dictionary):
     test = 0
-    if a_dictionary == None:
+    if a_dictionary is None:
         return None
-    if len(a_dictionary) == 0: 
+    if len(a_dictionary) == 0:
         return None
     if len(a_dictionary) >= 1:
         for char in a_dictionary:
