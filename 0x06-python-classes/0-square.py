@@ -5,7 +5,7 @@ class Square:
     one for now.
     
     Attributes:
-        No attributes cos it's an empty class
+        No attributes cos it is an empty class
 
     Methods:
         No methods
