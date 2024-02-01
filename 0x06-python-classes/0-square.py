@@ -15,5 +15,3 @@ class Square:
 
     """
     pass
-        """This is empty for now.
-        """
