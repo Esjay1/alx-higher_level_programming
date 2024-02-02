@@ -52,12 +52,11 @@ class Square:
         return (self.__size * self.__size)
 
     def my_print(self):
-        for i in range(1, (self.__size + 1)):
-            for j in range(1, (self.__size + 1)):
-                if self.__size == 0:
-                    print(" ")
-                    print("\n")
-                else:
+        if self.__size == 0:
+            print(" ")
+        else:
+            for i in range(1, (self.__size + 1)):
+                for j in range(1, (self.__size + 1)):
                     if j == self.__size:
                         print("#", end="\n")
                     else:
