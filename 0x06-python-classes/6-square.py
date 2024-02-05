@@ -87,7 +87,7 @@ class Square:
     def my_print(self):
         """getter method for my_print"""
         if self.__size == 0:
-            print(" ")
+            print()
         else:
             for i in range(self.__position[1]):
                 print()
