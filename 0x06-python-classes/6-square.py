@@ -56,13 +56,16 @@ class Square:
     def my_print(self):
         """this method prints the square with #"""
         if self.__size == 0:
-            print(" ")
+            print()
         else:
-            for i in range(self.__position[1]):
-                if j == self.__size:
-                    print("#", end="\n")
-                else:
-                    print("#", end="")
+            if self.__position[1] == 0:
+                for i in range(self.__size):
+                    print(" " * self.__position[0] + '#' * self.__size)
+            elif self.__position[1] > 0:
+                for j in range(self.__position[1]):
+                    print()
+                for k in range(self.__size):
+                    print(" " * self.__position[0] + '#' * self.__size)
 
     @property
     def position(self):
@@ -89,7 +92,11 @@ class Square:
         if self.__size == 0:
             print()
         else:
-            for i in range(self.__position[1]):
-                print()
-            for j in range(self.__size):
-                print(" " * self.__position[0] + "#" * self.__size)
+            if self.__position[1] == 0:
+                for m in range(self.__size):
+                    print(" " * self.__position[0] + '#' * self.__size)
+            elif self.__position[1] > 0:
+                for i in range(self.__position[1]):
+                    print()
+                for j in range(self.__size):
+                    print(" " * self.__position[0] + "#" * self.__size)
