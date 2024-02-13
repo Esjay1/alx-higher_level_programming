@@ -4,3 +4,4 @@
 class Rectangle:
     """This is an empty rectangle class"""
     pass
+        """Do nothing"""
