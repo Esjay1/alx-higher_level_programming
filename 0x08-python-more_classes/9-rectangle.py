@@ -81,8 +81,8 @@ class Rectangle:
 
     """Action to perform when a delete operation is done"""
     def __del__(self):
-        print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
+        print("Bye rectangle...")
 
     """return the bigger one of two diff rectangles"""
     @staticmethod
