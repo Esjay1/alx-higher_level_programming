@@ -76,4 +76,4 @@ class Rectangle:
 
     """Action to perform when a delete operation is done"""
     def __del__(self):
-        print("Bye Rectangle...")
+        print("Bye rectangle...")
