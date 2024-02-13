@@ -84,9 +84,9 @@ class Rectangle:
         print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
 
+    """return the bigger one of two diff rectangles"""
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
-        """return the bigger one of two diff rectangles"""
         if not isinstance(rect_1, Rectangle):
             raise TypeError("rect_1 must be an instance of Rectangle")
         if not isinstance(rect_2, Rectangle):
@@ -96,7 +96,7 @@ class Rectangle:
         else:
             return rect_2
 
+    """class method to adjust the properties"""
     @classmethod
     def square(cls, size=0):
-        """class method to adjust the properties"""
         return cls(size, size)
