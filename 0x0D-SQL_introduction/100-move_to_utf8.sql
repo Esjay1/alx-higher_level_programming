@@ -13,7 +13,7 @@ COLLATE utf8mb4_unicode_ci;
 
 --Column conversion to utf8mb4
 ALTER TABLE first_table
-change name name VARCHAR(255)
+CHANGE name name VARCHAR(255)
 CHARACTER SET utf8mb4
 COLLATE utf8mb4_unicode_ci;
 
