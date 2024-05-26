@@ -2,18 +2,14 @@
 import os
 import py_compile
 
-# Get the filename from the environment variable
 pyfile = os.getenv('PYFILE')
 
-# Check if PYFILE is set
 if pyfile is None:
     print("Error: PYFILE environment variable is not set.")
     exit(1)
 
-# Define the output filename
 output_filename = pyfile + 'c'
 
-# Compile the Python file
 try:
     py_compile.compile(pyfile, cfile=output_filename)
     print(f"Compiled {pyfile} to {output_filename}")
