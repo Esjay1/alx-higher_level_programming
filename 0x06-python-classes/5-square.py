@@ -51,5 +51,5 @@ class Square:
         if self.__size == 0:
             print()
         for item in range(self.__size):
-            { print("#", end="") for j in range(self.__size)}
+            {print("#", end="") for j in range(self.__size)}
             print()
