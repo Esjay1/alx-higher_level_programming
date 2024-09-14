@@ -2,7 +2,7 @@
 """This task creates an empty class"""
 
 
-class Square:
+class Square():
     """This class defines what a Square is
     but the task requres me to create an empty
     one for now.
@@ -23,78 +23,61 @@ class Square:
 
     def __init__(self, size=0, position=(0, 0)):
         """This defines the acceptable size values"""
-        if type(size) == int:
-            self.__size = size
-        else:
-            raise TypeError("size must be an integer")
-        if size >= 0:
-            self.__size = size
-        else:
-            raise ValueError("size must be >= 0")
-        self.__position = position
+        self.size = size
+        self.position = position
 
+        """Private attribute"""
     @property
     def size(self):
-        """getter method for size"""
+        """mtd for getting size"""
         return self.__size
 
     @size.setter
     def size(self, value):
-        """setter method for size"""
-        if type(value) == int:
-            self.__size = value
-        else:
+        """setter mtd for size"""
+        if not isinstance(value, int):
             raise TypeError("size must be an integer")
-        if value >= 0:
-            self.__size = value
-        else:
+        elif value < 0:
             raise ValueError("size must be >= 0")
-
-    def area(self):
-        """this method computes the area of the square"""
-        return (self.__size * self.__size)
-
-    def my_print(self):
-        """this method prints the square with #"""
-        if self.__size == 0:
-            print(" ")
-        else:
-            for i in range(self.__position[1]):
-                if j == self.__size:
-                    print("#", end="\n")
-                else:
-                    print("#", end="")
+        self.__size = value
 
     @property
     def position(self):
+        """getter mtd for position"""
         return self.__position
 
     @position.setter
     def position(self, value):
-        for item in value:
-            if type(item) != int:
-                raise TypeError("position must be a tuple of 2 positive \
-                        integers")
-            else:
-                self.__position = value
+        """setter mtd for position"""
+        if (not isinstance(value, tuple) or
+            len(value) != 2 or
+            not all(isinstance(num, int) for num in value) or
+                not all(num >= 0 for num in value)):
+            raise TypeError("position must be a tuple of 2 positive integers")
+        self.__position = value
+
+    def area(self):
+        """mtd for calculating the area"""
+        return (self.__size * self.__size)
 
     def my_print(self):
+        """mtd that returns the current area calculation"""
         if self.__size == 0:
-            print(" ")
-        else:
-            for i in range(self.__position[1]):
-                print()
-            for j in range(self.__size):
-                print(" " * self.__position[0] + "#" * self.__size)
-    
+            print()
+            return
+        {print() for i in range(0, self.__position[1])}
+        for i in range(self.__size):
+            {print(" ", end="") for item in range(0, self.__position[0])}
+            {print("#", end="") for k in range(0, self.__size)}
+            print("")
+
     def __str__(self):
-        """return square in string representation"""
-        ans = ""
-        if self.__size == 0:
-            ans = ans + "\n"
-        else:
-            for i in range(self.__position[1]):
-                ans = ans + "\n"
-            for j in range(self.__size):
-                ans += " " * self.__position[0] + '#' * self.__size + "\n"
-        return ans.strip()
+        """string rep... of the square"""
+        if self.__size != 0:
+            {print() for i in range(0, self.__position[1])}
+        for i in range(0, self.__size):
+            {print(" ", end="") for item in range(0, self.__position[0])}
+            {print("#", end="") for k in range(0, self.__size)}
+            if i != self.__size - 1:
+                print()
+        return ("")
