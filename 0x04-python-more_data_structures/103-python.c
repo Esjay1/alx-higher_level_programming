@@ -4,7 +4,7 @@ void print_python_list(PyObject *p);
 void print_python_bytes(PyObject *p);
 
 /**
- * print_python_list - Prints information about Python lists
+ * print_python_list - Prints basic info about Python lists.
  * @p: A PyObject list object.
  */
 void print_python_list(PyObject *p)
@@ -24,14 +24,14 @@ void print_python_list(PyObject *p)
 	for (i = 0; i < size; i++)
 	{
 		type = list->ob_item[i]->ob_type->tp_name;
-		printf("Element %d:%s\n", i, type);
+		printf("Element %d: %s\n", i, type);
 		if (strcmp(type, "bytes") == 0)
 			print_python_bytes(list->ob_item[i]);
 	}
 }
 
 /**
- * print_python_bytes - Prints information about python byte objects.
+ * print_python_bytes - Prints basic info about Python byte objects.
  * @p: A PyObject byte object.
  */
 void print_python_bytes(PyObject *p)
@@ -45,6 +45,7 @@ void print_python_bytes(PyObject *p)
 		printf("  [ERROR] Invalid Bytes Object\n");
 		return;
 	}
+
 	printf("  size: %ld\n", ((PyVarObject *)p)->ob_size);
 	printf("  trying string: %s\n", bytes->ob_sval);
 
