@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""This task creates an empty class"""
+""" Define a square class"""
 
 
 class Square:
@@ -20,46 +20,36 @@ class Square:
         25
 
     """
-    def __init__(self, size=0):
-        """This defines the acceptable size values"""
-        if type(size) == int:
-            self.__size = size
-        else:
-            raise TypeError("size must be an integer")
-        if size >= 0:
-            self.__size = size
-        else:
-            raise ValueError("size must be >= 0")
 
+    def __init__(self, size=0):
+        """ instantation with size for our obect
+        initialization
+        """
+        self.__size = size
+
+        """ Getter for the private attr size"""
     @property
     def size(self):
-        """getter method for size"""
+        """property getter"""
         return self.__size
 
     @size.setter
     def size(self, value):
-        """setter method for size"""
-        if type(value) == int:
-            self.__size = value
-        else:
+        """ setter property"""
+        if not isinstance(value, int):
             raise TypeError("size must be an integer")
-        if value >= 0:
-            self.__size = value
-        else:
+        elif value < 0:
             raise ValueError("size must be >= 0")
+        self.__size = value
 
     def area(self):
-        """this method computes the area of the square"""
+        """ method that returns the square"""
         return (self.__size * self.__size)
 
     def my_print(self):
-        """this method prints the square with #"""
+        """ print rep of square with # char... """
         if self.__size == 0:
-            print(" ")
-        else:
-            for i in range(1, (self.__size + 1)):
-                for j in range(1, (self.__size + 1)):
-                    if j == self.__size:
-                        print("#", end="\n")
-                    else:
-                        print("#", end="")
+            print()
+        for item in range(self.__size):
+            { print("#", end="") for j in range(self.__size)}
+            print()
