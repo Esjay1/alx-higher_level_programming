@@ -46,7 +46,7 @@ void print_python_bytes(PyObject *p)
 		return;
 	}
 	printf("  size: %ld\n", ((PyVarObject *)p)->ob_size);
-	printf("  trying string: %s\n", btes->ob_sval);
+	printf("  trying string: %s\n", bytes->ob_sval);
 
 	if (((PyVarObject *)p)->ob_size > 10)
 		size = 10;
